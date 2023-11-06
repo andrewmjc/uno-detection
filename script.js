@@ -88,7 +88,7 @@ const DETECT_API_KEY = "4979BkZFjxZFH8mUvpaE";
 const CAMERA_ACCESS_URL = "https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/63d40cd1de273045d359cf9a_camera-access2.png";
 const LOADING_URL = "https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/63d40cd2210b56e0e33593c7_loading-camera2.gif";
 var current_model_version = 3;
-var webcamLoop = false;
+var webcamLoop = true;
 
 
 
@@ -150,13 +150,7 @@ document.getElementById("video").addEventListener(
     false
 );
 
-document
-    .getElementById("webcam-predict")
-    .addEventListener("click", function () {
-    document.getElementById("picture_canvas").style.display = "block";
-    document.getElementById("example_demo").style.display = "none";
-    webcamInference();
-    });
+webCamInference();
 
 var bounding_box_colors = {};
 
