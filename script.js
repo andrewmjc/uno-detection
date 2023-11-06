@@ -90,7 +90,7 @@ for (var item in available_models) {
     model_select.add(option);
 }
 
-var current_model_name = "uno-cards/3";
+var current_model_name = "uno-cards";
 const API_KEY = "rf_m5KeqStpNAgm4LLRFCCRRdIDRrs1";
 const DETECT_API_KEY = "4979BkZFjxZFH8mUvpaE";
 const CAMERA_ACCESS_URL = "https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/63d40cd1de273045d359cf9a_camera-access2.png";
@@ -98,21 +98,9 @@ const LOADING_URL = "https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/63
 var current_model_version = 9;
 var webcamLoop = false;
 
-// when user scrolls past #model-select, stop webcam
-window.addEventListener("scroll", function() {
-    if (window.scrollY > 100) {
-        webcamLoop = false;
-    }
-    // if comes back up, start webcam
-    if (window.scrollY < 100) {
-        webcamLoop = true;
-    }
-});
+
 
 async function apiRequest (image) {
-    var version = available_models[current_model_name]["version"];
-    var name = current_model_name;
-
     var url = "https://detect.roboflow.com/uno-cards/3" + "?api_key=" + DETECT_API_KEY;
     
     // no cors
@@ -242,8 +230,6 @@ function switchModel() {
     model = getModel();
 }
 
-// apply switchModel to select
-document.getElementById("model-select").addEventListener("change", switchModel);
 
 function setImageState(src, canvas = "picture_canvas") {
     var canvas = document.getElementById(canvas);
