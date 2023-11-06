@@ -80,15 +80,7 @@ var available_models = {
     }
 };
 
-// populate model select
-var model_select = document.getElementById("model-select");
 
-for (var item in available_models) {
-    var option = document.createElement("option");
-    option.text = available_models[item]["name"];
-    option.value = item;
-    model_select.add(option);
-}
 
 var current_model_name = "uno-cards";
 const API_KEY = "rf_m5KeqStpNAgm4LLRFCCRRdIDRrs1";
