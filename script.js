@@ -123,7 +123,7 @@ async function getModel() {
     });
 
     model.configure({
-        threshold: available_models[current_model_name]["confidence"],
+        threshold: 0.5,
         max_objects: 50
     });
 
