@@ -113,7 +113,7 @@ async function apiRequest (image) {
     var version = available_models[current_model_name]["version"];
     var name = current_model_name;
 
-    var url = "https://detect.roboflow.com/" + name + "/" + version + "?api_key=" + DETECT_API_KEY;
+    var url = "https://detect.roboflow.com/uno-cards/3" + "?api_key=" + DETECT_API_KEY;
     
     // no cors
     return fetch(url, {
